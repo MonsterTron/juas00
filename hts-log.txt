@@ -1,0 +1,11 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 08 Sep 2021 23:51:39 at https://ethergoo.io/freekitty/0x263b604509d6a825719859ee458b2d91fb7d330d +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "es, en, *" https://ethergoo.io/freekitty/0x263b604509d6a825719859ee458b2d91fb7d330d -O1 "C:\Mis lugares Web\g00" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+
+HTTrack Website Copier/3.49-2 mirror complete in 12 seconds : 45 links scanned, 44 files written (1869695 bytes overall) [1785500 bytes received at 148791 bytes/sec], 140466 bytes transferred using HTTP compression in 1 files, ratio 28%, 11.2 requests per connection
+(No errors, 0 warnings, 0 messages)

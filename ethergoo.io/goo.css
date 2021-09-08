@@ -1,0 +1,1082 @@
+html {
+	height: 100%;
+}
+
+body {
+	font-size: 14px;
+	font-family: "Press Start 2P", cursive;
+	position:absolute;
+	min-width:100%;
+	min-height:100%;
+	line-height: 1.3;
+	margin: 0;
+	padding: 0;
+}
+
+.thinFontBorder {
+	color: #ffffff;
+
+	text-shadow:
+	    -1px -1px 0 #000,
+	     1px -1px 0 #000,
+	    -1px  1px 0 #000,
+	     1px  1px 0 #000;
+}
+
+.splash {
+	background: url(splash.png) no-repeat center bottom fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.bgStars {
+	background: url(sky.png) no-repeat center bottom fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.parentbox:before {      /* create a full-height inline block pseudo-element */
+	font: 0/0 a;
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle; /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+.childbox {
+    display: inline-block;
+    vertical-align: middle;          /* vertical alignment of the inline element */
+}
+
+.balance {
+	width: 250px;
+	height: 56px;
+	background: url(balancebutton.png);
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.inventory {
+	height: 488px;
+	background: url(inventory.png);
+	overflow: hidden;
+}
+
+.inventorySlot {
+	width: 84px;
+	height: 85px;
+	background: url(slot.png);
+	display: inline-block;
+	position: relative;
+	text-align: center;
+}
+
+.upgradeButton {
+	width: 250px;
+	height: 66px;
+	background: url(upgradebutton.png);
+	margin: 0 auto;
+}
+
+.unitUpgradeButton {
+	width: 270px;
+	height: 80px;
+	background: url(unitupgradebutton.png);
+	margin: 0 auto;
+	display: inline-block;
+	margin-top: 12px;
+	cursor: pointer;
+}
+
+.unitUpgradeButtonSmall {
+	width: 206px;
+	height: 64px;
+	background: url(unitupgradebuttonsmall.png);
+	margin: 0 auto;
+	display: inline-block;
+	text-align: left;
+	margin-top: 4px;
+	cursor: pointer;
+}
+
+.unitTileBox {
+	position: relative;
+	float: left;
+	width: 230px;
+	height: 312px;
+	color: #5D3913;
+	background: url(unitbox.png);
+	margin-right: 16px;
+	margin-bottom: 120px;
+}
+
+.buttonSpan {
+	vertical-align: middle;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.buttonMiddle {
+	height: 48px;
+	background: url(buttonmiddle.png);
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 12px;
+	color: #5D3913;
+	line-height: 50px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.splashButton {
+	height: 51px;
+	width: 236px;
+	background: url(splashbutton.png);
+	vertical-align: middle;
+	font-size: 17px;
+	color: #5D3913;
+	line-height: 48px;
+	cursor: pointer;
+}
+
+.inputGoo {
+	font-size: 14px;
+	text-decoration: none;
+	border: 0;
+	font-family: "Press Start 2P", cursive;
+	text-align: right;
+	border-radius: 0;
+	border: 2px solid wheat;
+	color: wheat;
+	background: 0 0;
+	background-image: none;
+	width: 140px;
+	padding-top: 3px;
+	padding-right: 2px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+	vertical-align: middle;
+}
+
+.mapTable {
+	transform: rotateX(60deg) rotateZ(45deg);
+	position: absolute;
+    border-spacing: 0px;
+}
+
+.mapTable tr {
+    height: 0px;
+    width: 0px;
+    display: block;
+}
+
+.mapTable tr td {
+	height: 0px;
+	width: 0px;
+  	display: block;
+	padding: 0px;
+}
+
+.tile {
+	transform: translate3d(0em, 0em, 0em);
+	width: 6em;
+	height: 6em;
+
+	transition: all 0.8s cubic-bezier(0.22, 0.6, 0.39, 1.42);
+	box-shadow: 85px 85px 16px 1px rgba(0, 0, 0, 0.5);
+}
+
+.tile.hide {
+	transform: translate3d(12em, 12em, 0em) !important;
+	opacity: 0;
+}
+
+.tile.raise {
+	transform: translate3d(-0.6em, -0.6em, 0em) !important;
+	transition: all 0.3s;
+}
+
+.tile>div {
+	transform:
+		rotateZ(-45deg) rotateY(-60deg)
+		translate3d(4.6em, -7.6em, 0em);
+
+	width: 276px;
+	height: 388px;
+	pointer-events: none;
+
+    background-size: 1700% 100%;
+	background-position: -4px 0;
+    background-repeat: no-repeat;
+	background-image: url(tiles.png);
+    image-rendering: pixelated;
+}
+
+.unit {
+	width: 54px;
+	height: 54px;
+	pointer-events: none;
+	position: absolute;
+
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	image-rendering: pixelated;
+}
+
+.unit-1 {
+	background-image: url("units/unit1.png");
+	top: 132px;
+  	left: 76px;
+}
+
+.unit-2 {
+	background-image: url("units/unit2.png");
+	top: 132px;
+  	left: 76px;
+}
+
+.unit-3 {
+	background-image: url("units/unit3.png");
+	top: 132px;
+  	left: 76px;
+}
+
+.unit-4 {
+	background-image: url("units/unit4.png");
+	top: 132px;
+  	left: 76px;
+}
+
+.unit-5 {
+	background-image: url("units/unit5.png");
+	top: 132px;
+  	left: 76px;
+}
+
+.unit-6 {
+	background-image: url("units/unit6.png");
+	top: 132px;
+  	left: 76px;
+}
+
+.unit-20 {
+	background-image: url("units/unit20.png");
+	top: 138px;
+  	left: 46px;
+	width: 70px;
+	height: 70px;
+}
+
+.unit-21 {
+	background-image: url("units/unit21.png");
+	top: 138px;
+  	left: 46px;
+	width: 70px;
+	height: 70px;
+}
+
+.unit-22 {
+	background-image: url("units/unit22.png");
+	top: 138px;
+  	left: 46px;
+	width: 70px;
+	height: 70px;
+}
+
+.unit-23 {
+	background-image: url("units/unit23.png");
+	top: 138px;
+  	left: 46px;
+	width: 70px;
+	height: 70px;
+}
+
+.unit-24 {
+	background-image: url("units/unit24.png");
+	top: 138px;
+  	left: 46px;
+	width: 70px;
+	height: 70px;
+}
+
+.unit-25 {
+	background-image: url("units/unit25.png");
+	top: 138px;
+  	left: 46px;
+	width: 70px;
+	height: 70px;
+}
+
+.building {
+	width: 256px;
+	height: 244px;
+	pointer-events: none;
+
+	position: absolute;
+  	top: -28px;
+  	left: 4px;
+
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	image-rendering: pixelated;
+}
+
+.building-1 {
+	background-image: url(goofactory.gif);
+}
+.building-2 {
+	background-image: url(goofactory.gif);
+}
+.building-3 {
+	background-image: url(goofactory.gif);
+}
+.building-4 {
+	background-image: url(goofactory.gif);
+}
+.building-5 {
+	background-image: url(goofactory.gif);
+}
+.building-6 {
+	background-image: url(goofactory.gif);
+}
+
+.building-20 {
+	background-image: url(barracks.gif);
+}
+.building-21 {
+	background-image: url(barracks.gif);
+}
+.building-22 {
+	background-image: url(barracks.gif);
+}
+.building-23 {
+	background-image: url(barracks.gif);
+}
+.building-24 {
+	background-image: url(barracks.gif);
+}
+.building-25 {
+	background-image: url(barracks.gif);
+}
+
+.building-marketplace {
+	background-image: url(marketplace.png);
+}
+
+.building-clanhq {
+	background-image: url(clanhq.gif);
+	height: 226px;
+	top: -12px;
+	left: 6px;
+}
+
+.building-colosseum {
+	background-image: url(colosseum.gif);
+	width: 220px;
+	height: 166px;
+	top: 26px;
+	left: 26px;
+}
+
+.building-premiumfactory {
+	background-image: url(premiumfactory.gif);
+	width: 228px;
+	height: 286px;
+	top: -80px;
+	left: 38px;
+}
+
+
+
+.tile>div.tile-0{
+    background-position: -2px 0px;
+}
+.tile>div.tile-1{
+    background-position: -278px 0px;
+}
+.tile>div.tile-2{
+	background-position: -554px 0px;
+}
+.tile>div.tile-3{
+	background-position: -830px 0px;
+}
+.tile>div.tile-4{
+	background-position: -1106px 0px;
+}
+.tile>div.tile-5{
+	background-position: -1382px 0px;
+}
+.tile>div.tile-6{
+	background-position: -1658px 0px;
+}
+.tile>div.tile-7{
+	background-position: -1934px 0px;
+}
+.tile>div.tile-8{
+	background-position: -2210px 0px;
+}
+.tile>div.tile-9{
+	background-position: -2486px 0px;
+}
+.tile>div.tile-10{
+	background-position: -2762px 0px;
+}
+.tile>div.tile-11{
+	background-position: -3038px 0px;
+}
+.tile>div.tile-12{
+	background-position: -3314px 0px;
+}
+.tile>div.tile-13{
+	background-position: -3590px 0px;
+}
+.tile>div.tile-14{
+	background-position: -3864px 0px;
+}
+.tile>div.tile-15{
+	background-position: -4140px 0px;
+}
+.tile>div.tile-16{
+	background-position: -4418px 0px;
+}
+
+
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p {
+	line-height: 0.95;
+}
+
+.clanBox {
+	position: fixed;
+	text-align: left;
+	top: 14%;
+	left: 50%;
+	z-index: 5;
+	color: wheat;
+	width: 798px;
+	height: 706px;
+	background: url(clanbox.png);
+}
+
+.splashBox {
+	z-index: 5;
+	color: wheat;
+	width: 798px;
+	height: 706px;
+	background: url(clanbox.png);
+}
+
+.pixelBox {
+  box-shadow:
+    5px 0 #ffffff,
+    -5px 0 #ffffff,
+    0 -5px #ffffff,
+    0 5px #ffffff,
+    10px 0 #000000,
+    -10px 0 #000000,
+    0 -10px #000000,
+    0 10px #000000,
+    0 0 0 6px #000000;
+  margin: 18px 0 0 18px;
+  text-align: center;
+  padding-top: 8px;
+  padding-left: 5px;
+  padding-right: 6px;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+
+.numberButton {
+	background: #ffffff;
+	padding-left: 4px;
+	padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+	color: black;
+	box-shadow: inset -2px -2px 0px 0px #aaaaaa;
+	z-index: 2;
+}
+
+.unactiveNumber:hover, .unactiveNumber:focus {
+  background: #cccccc;
+  box-shadow: inset -2px -2px 0px 0px #aaaaaa;
+}
+
+.numberButton:active, .activeNumber {
+  background: #cccccc;
+  box-shadow: inset 2px 2px 0px 0px #999999;
+}
+
+.disabledNumberButton {
+	background: #ffffff;
+	padding-left: 4px;
+	padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+	color: #d4d4d4;
+}
+
+.disabledNumberButton:before {
+  top: -3px;
+  left: 0;
+  border-top: 3px #eaeaea solid;
+  border-bottom: 3px #eaeaea solid;
+}
+
+.disabledNumberButton:after {
+  left: -3px;
+  top: 0;
+  border-left: 3px #eaeaea solid;
+  border-right: 3px #eaeaea solid;
+}
+
+
+
+.buyButton {
+	background: #92cd41;
+	padding-left: 1px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+	color: white;
+	width: 70px;
+	box-shadow: inset -2px -2px 0px 0px #4aa52e;
+	margin-left: 14px;
+	z-index: 2;
+}
+
+.buyButton:hover, .buyButton:focus {
+  background: #76c442;
+  box-shadow: inset -2px -2px 0px 0px #4aa52e;
+}
+
+.buyButton:active {
+  box-shadow: inset 2px 2px 0px 0px #4aa52e;
+}
+
+.buyButtonDisabled {
+	background: rgba(146, 205, 65, 0.7);
+	padding-left: 1px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+	color: white;
+	width: 70px;
+	margin-left: 14px;
+}
+
+.buyButtonDisabled:before {
+  top: -3px;
+  left: 0;
+  border-top: 3px #7f8a71 solid;
+  border-bottom: 3px #7f8a71 solid;
+}
+
+.buyButtonDisabled:after {
+  left: -3px;
+  top: 0;
+  border-left: 3px #7f8a71 solid;
+  border-right: 3px #7f8a71 solid;
+}
+
+
+
+.sellButton {
+	background: #e76e55;
+	padding-left: 1px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+	color: white;
+	width: 70px;
+	box-shadow: inset -2px -2px 0px 0px #8c2022;
+	margin-left: 14px;
+	z-index: 2;
+}
+
+.sellButton:hover, .sellButton:focus {
+  background: #ce372b;
+  box-shadow: inset -2px -2px 0px 0px #8c2022;
+}
+
+.sellButton:active {
+  box-shadow: inset 2px 2px 0px 0px #8c2022;
+}
+
+.sellButtonDisabled {
+	background: rgba(231, 110, 85, 0.7);
+	padding-left: 1px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+	color: white;
+	width: 70px;
+	margin-left: 14px;
+}
+
+.sellButtonDisabled:before {
+  top: -3px;
+  left: 0;
+  border-top: 3px #967270 solid;
+  border-bottom: 3px #967270 solid;
+}
+
+.sellButtonDisabled:after {
+  left: -3px;
+  top: 0;
+  border-left: 3px #967270 solid;
+  border-right: 3px #967270 solid;
+}
+
+
+
+
+.deposit {
+	font-size: 14px;
+	text-decoration: none;
+	border: 0;
+	font-family: "Press Start 2P", cursive;
+	text-align: right;
+	border-radius: 0;
+	border: 1px solid rgba(132,156,177,.56);
+	background: 0 0;
+	background-image: none;
+	width: 120px;
+	padding-top: 3px;
+	padding-right: 2px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+}
+
+.eightBit {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.eightBit:before, .eightBit:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+}
+
+.eightBit:before {
+  top: -3px;
+  left: 0;
+  border-top: 3px black solid;
+  border-bottom: 3px black solid;
+}
+
+.eightBit:after {
+  left: -3px;
+  top: 0;
+  border-left: 3px black solid;
+  border-right: 3px black solid;
+}
+
+
+.eightBitDisabled {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.eightBitDisabled:before, .eightBitDisabled:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+}
+
+.singleUpgrade {
+	margin-left: 6px;
+	width: 304px;
+}
+
+.upgradeDisabled {
+	opacity: 0.25;
+	filter: alpha(opacity=25);
+}
+
+.tileDisabled {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.col-container {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.sidebar {
+	transform: translate3d(0em, 0em, 0em);
+}
+
+.sidebarHeader {
+	height: 64px;
+	background: url(sidebarheader.png);
+}
+
+.sidebarMenu {
+	background: url(sidebar.png);
+}
+
+
+/* For portrait */
+.sidebarMiddle {
+	background: url(sidebarmiddle.png);
+}
+
+.barracks {
+	border-left: 1px dotted #aaa;
+	border-top: 1px dotted #aaa;
+	height: 40px;
+	padding-top: 17px;
+}
+
+.content {
+	width: 100%;
+	position: relative;
+}
+
+.gameInfo {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: calc(100vh - 326px);
+	margin-top: -54px;
+}
+
+.gameFooter {
+	border-top: 1px dotted #aaa;
+	height: 324px;
+}
+
+.unitBox {
+	width: 258px;
+	min-width: 258px;
+}
+
+.raffleBox {
+	width: 262px;
+	min-width: 262px;
+}
+
+.col {
+    display: table-cell; /* Make elements inside the container behave like table cells */
+	vertical-align: top;
+}
+
+.row {
+	display: table-row;
+}
+
+@media only screen {
+
+}
+
+@media only screen and (min-width: 34em) {
+
+}
+
+@media only screen and (min-width: 54em) {
+
+}
+
+@media only screen and (min-width: 76em) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.legacySidebar {
+	display: table; /* Make the container element behave like a table */
+	width: 600px;
+	border-left: 1px dotted #aaa;
+	margin-right: -1.2em;
+}
+
+.sidebarOverflow {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: calc(100vh - 114px);
+}
+
+.legacySidebarHeader {
+	width: 600px;
+	border-left: 1px dotted #aaa;
+	border-bottom: 1px dotted #aaa;
+	padding-top: 16px;
+	height: 37px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PERFECT SCROLL */
+
+
+
+
+/*
+ * Container style
+ */
+.ps {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+/*
+ * Scrollbar rail styles
+ */
+.ps__rail-x {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  height: 15px;
+  /* there must be 'bottom' or 'top' for ps__rail-x */
+  bottom: 0px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__rail-y {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  width: 15px;
+  /* there must be 'right' or 'left' for ps__rail-y */
+  right: 0;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+  display: block;
+  background-color: transparent;
+}
+
+.ps:hover > .ps__rail-x,
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-x,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-x > .ps__rail-x,
+.ps--scrolling-y > .ps__rail-y {
+  opacity: 0.6;
+}
+
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+  background-color: #eee;
+  opacity: 0.9;
+}
+
+/*
+ * Scrollbar thumb styles
+ */
+.ps__thumb-x {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, height .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, height .2s ease-in-out;
+  height: 6px;
+  /* there must be 'bottom' for ps__thumb-x */
+  bottom: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__thumb-y {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, width .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+  width: 6px;
+  /* there must be 'right' for ps__thumb-y */
+  right: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x {
+  background-color: #999;
+  height: 11px;
+}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #999;
+  width: 11px;
+}
+
+/* MS supports */
+@supports (-ms-overflow-style: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+.scrollbar-container {
+  position: relative;
+  height: 100%; }
+
+/*# sourceMappingURL=styles.css.map*/
